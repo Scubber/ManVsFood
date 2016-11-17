@@ -43,11 +43,17 @@ namespace ManVsFood
         public class FoodItem
         {
             //declare variable names, get them from FoodItemsDatabase.xml
-            public double duration { get; set; }
+  
             public string challengename { get; set; }
+            public string description { get; set; }
             public int calories { get; set; }
-            public string image { get; set; }
             public double price { get; set; }
+            public double duration { get; set; }
+            public string image { get; set; }
+
+           
+            
+            
         }
         //end XML database stuff
 
@@ -88,21 +94,25 @@ namespace ManVsFood
         //Listboxes
         private void lb_Items_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //for debugging
             int a = 0;
+            //What we do when we select an item
             var lbox = sender as ListBox;
             if (lbox != null)
             {
                 if (lbox.SelectedItem != null)
                 {
-                    //display the information of selected items
+                    //clear the description
+                    lb_Description.Items.Clear();
+                    //Get the loaded XML data into a variable "challenge"
                     var challenge = lbox.SelectedItem as FoodItem;
+                    //display the information of selected items in appropriate labels/listbox
                     lbl_ChallengeTime.Text = challenge.duration.ToString();
                     lbl_Cost.Text = "$" + challenge.price.ToString("F2");
+                    lb_Description.Items.Add(challenge.description.ToString());
                     //figure out how to set the image
                     //Image doge = Image.FromFile("..\\..\\Resources\\doge.jpg");
                     //Image cate = Image.FromFile("..\\..\\Resources\\cate.jpg");
-
                     picBox.Image = (Image)Properties.Resources.ResourceManager.GetObject(challenge.image);
                 }
                

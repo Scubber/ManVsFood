@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MVF));
             this.lb_Items = new System.Windows.Forms.ListBox();
-            this.lb_AddedItems = new System.Windows.Forms.ListBox();
+            this.lb_Description = new System.Windows.Forms.ListBox();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Remove = new System.Windows.Forms.Button();
             this.btn_Reset = new System.Windows.Forms.Button();
@@ -42,6 +42,8 @@
             this.lbl_ChallengeTime = new System.Windows.Forms.Label();
             this.lbl_Cost = new System.Windows.Forms.Label();
             this.lbl_MVF = new System.Windows.Forms.Label();
+            this.lbl_ChallengeStatic = new System.Windows.Forms.Label();
+            this.lbl_DescribeStatic = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,15 +59,15 @@
             this.lb_Items.TabIndex = 0;
             this.lb_Items.SelectedIndexChanged += new System.EventHandler(this.lb_Items_SelectedIndexChanged);
             // 
-            // lb_AddedItems
+            // lb_Description
             // 
-            this.lb_AddedItems.FormattingEnabled = true;
-            this.lb_AddedItems.ItemHeight = 24;
-            this.lb_AddedItems.Location = new System.Drawing.Point(481, 146);
-            this.lb_AddedItems.Name = "lb_AddedItems";
-            this.lb_AddedItems.Size = new System.Drawing.Size(283, 628);
-            this.lb_AddedItems.TabIndex = 1;
-            this.lb_AddedItems.SelectedIndexChanged += new System.EventHandler(this.lb_AddedItems_SelectedIndexChanged);
+            this.lb_Description.FormattingEnabled = true;
+            this.lb_Description.ItemHeight = 24;
+            this.lb_Description.Location = new System.Drawing.Point(481, 146);
+            this.lb_Description.Name = "lb_Description";
+            this.lb_Description.Size = new System.Drawing.Size(283, 628);
+            this.lb_Description.TabIndex = 1;
+            this.lb_Description.SelectedIndexChanged += new System.EventHandler(this.lb_AddedItems_SelectedIndexChanged);
             // 
             // btn_Add
             // 
@@ -121,7 +123,7 @@
             // 
             this.picBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBox.Image = ((System.Drawing.Image)(resources.GetObject("picBox.Image")));
-            this.picBox.Location = new System.Drawing.Point(865, 146);
+            this.picBox.Location = new System.Drawing.Point(830, 146);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(640, 640);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -166,11 +168,29 @@
             // 
             this.lbl_MVF.AutoSize = true;
             this.lbl_MVF.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_MVF.Location = new System.Drawing.Point(176, 45);
+            this.lbl_MVF.Location = new System.Drawing.Point(970, 33);
             this.lbl_MVF.Name = "lbl_MVF";
             this.lbl_MVF.Size = new System.Drawing.Size(416, 74);
             this.lbl_MVF.TabIndex = 12;
             this.lbl_MVF.Text = "Man Vs Food";
+            // 
+            // lbl_ChallengeStatic
+            // 
+            this.lbl_ChallengeStatic.AutoSize = true;
+            this.lbl_ChallengeStatic.Location = new System.Drawing.Point(12, 108);
+            this.lbl_ChallengeStatic.Name = "lbl_ChallengeStatic";
+            this.lbl_ChallengeStatic.Size = new System.Drawing.Size(177, 25);
+            this.lbl_ChallengeStatic.TabIndex = 13;
+            this.lbl_ChallengeStatic.Text = "Select a Challenge";
+            // 
+            // lbl_DescribeStatic
+            // 
+            this.lbl_DescribeStatic.AutoSize = true;
+            this.lbl_DescribeStatic.Location = new System.Drawing.Point(476, 108);
+            this.lbl_DescribeStatic.Name = "lbl_DescribeStatic";
+            this.lbl_DescribeStatic.Size = new System.Drawing.Size(109, 25);
+            this.lbl_DescribeStatic.TabIndex = 14;
+            this.lbl_DescribeStatic.Text = "Description";
             // 
             // Form_MVF
             // 
@@ -178,6 +198,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1576, 1016);
+            this.Controls.Add(this.lbl_DescribeStatic);
+            this.Controls.Add(this.lbl_ChallengeStatic);
             this.Controls.Add(this.lbl_MVF);
             this.Controls.Add(this.lbl_Cost);
             this.Controls.Add(this.lbl_ChallengeTime);
@@ -188,7 +210,7 @@
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.btn_Remove);
             this.Controls.Add(this.btn_Add);
-            this.Controls.Add(this.lb_AddedItems);
+            this.Controls.Add(this.lb_Description);
             this.Controls.Add(this.lb_Items);
             this.Controls.Add(this.picBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -205,7 +227,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox lb_Items;
-        private System.Windows.Forms.ListBox lb_AddedItems;
+        private System.Windows.Forms.ListBox lb_Description;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Button btn_Remove;
         private System.Windows.Forms.Button btn_Reset;
@@ -217,6 +239,8 @@
         private System.Windows.Forms.Label lbl_ChallengeTime;
         private System.Windows.Forms.Label lbl_Cost;
         private System.Windows.Forms.Label lbl_MVF;
+        private System.Windows.Forms.Label lbl_ChallengeStatic;
+        private System.Windows.Forms.Label lbl_DescribeStatic;
     }
 }
 
