@@ -63,7 +63,11 @@ namespace ManVsFood
         //buttons
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            // Adds items to lb_AddedItems
+            // Opens a new form and adds a new challenge item to lb_Items
+            Form_ChallengeInfo challengeInfo = new Form_ChallengeInfo();
+            challengeInfo.Show();
+           
+            
         }
 
         private void btn_Remove_Click(object sender, EventArgs e)
