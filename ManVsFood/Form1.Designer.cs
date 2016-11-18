@@ -37,12 +37,12 @@
             this.btn_Start = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.picBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_ChallengeDurationStatic = new System.Windows.Forms.Label();
+            this.lbl_CostOfFailureStatic = new System.Windows.Forms.Label();
             this.lbl_ChallengeTime = new System.Windows.Forms.Label();
             this.lbl_Cost = new System.Windows.Forms.Label();
             this.lbl_MVF = new System.Windows.Forms.Label();
-            this.lbl_ChallengeStatic = new System.Windows.Forms.Label();
+            this.lbl_SelectChallengeStatic = new System.Windows.Forms.Label();
             this.lbl_DescribeStatic = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
@@ -50,12 +50,12 @@
             // lb_Items
             // 
             this.lb_Items.DisplayMember = "challengename";
-            this.lb_Items.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Items.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Items.FormattingEnabled = true;
-            this.lb_Items.ItemHeight = 17;
+            this.lb_Items.ItemHeight = 24;
             this.lb_Items.Location = new System.Drawing.Point(12, 146);
             this.lb_Items.Name = "lb_Items";
-            this.lb_Items.Size = new System.Drawing.Size(283, 616);
+            this.lb_Items.Size = new System.Drawing.Size(283, 604);
             this.lb_Items.TabIndex = 0;
             this.lb_Items.SelectedIndexChanged += new System.EventHandler(this.lb_Items_SelectedIndexChanged);
             // 
@@ -124,29 +124,30 @@
             this.picBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBox.Image = ((System.Drawing.Image)(resources.GetObject("picBox.Image")));
             this.picBox.Location = new System.Drawing.Point(830, 146);
+            this.picBox.MaximumSize = new System.Drawing.Size(600, 600);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(640, 640);
+            this.picBox.Size = new System.Drawing.Size(600, 600);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 7;
             this.picBox.TabStop = false;
             // 
-            // label1
+            // lbl_ChallengeDurationStatic
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(883, 812);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 25);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Challenge Duration:";
+            this.lbl_ChallengeDurationStatic.AutoSize = true;
+            this.lbl_ChallengeDurationStatic.Location = new System.Drawing.Point(883, 812);
+            this.lbl_ChallengeDurationStatic.Name = "lbl_ChallengeDurationStatic";
+            this.lbl_ChallengeDurationStatic.Size = new System.Drawing.Size(185, 25);
+            this.lbl_ChallengeDurationStatic.TabIndex = 8;
+            this.lbl_ChallengeDurationStatic.Text = "Challenge Duration:";
             // 
-            // label2
+            // lbl_CostOfFailureStatic
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(883, 861);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 25);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Cost of Failure:";
+            this.lbl_CostOfFailureStatic.AutoSize = true;
+            this.lbl_CostOfFailureStatic.Location = new System.Drawing.Point(883, 861);
+            this.lbl_CostOfFailureStatic.Name = "lbl_CostOfFailureStatic";
+            this.lbl_CostOfFailureStatic.Size = new System.Drawing.Size(144, 25);
+            this.lbl_CostOfFailureStatic.TabIndex = 9;
+            this.lbl_CostOfFailureStatic.Text = "Cost of Failure:";
             // 
             // lbl_ChallengeTime
             // 
@@ -174,14 +175,14 @@
             this.lbl_MVF.TabIndex = 12;
             this.lbl_MVF.Text = "Man Vs Food";
             // 
-            // lbl_ChallengeStatic
+            // lbl_SelectChallengeStatic
             // 
-            this.lbl_ChallengeStatic.AutoSize = true;
-            this.lbl_ChallengeStatic.Location = new System.Drawing.Point(12, 108);
-            this.lbl_ChallengeStatic.Name = "lbl_ChallengeStatic";
-            this.lbl_ChallengeStatic.Size = new System.Drawing.Size(177, 25);
-            this.lbl_ChallengeStatic.TabIndex = 13;
-            this.lbl_ChallengeStatic.Text = "Select a Challenge";
+            this.lbl_SelectChallengeStatic.AutoSize = true;
+            this.lbl_SelectChallengeStatic.Location = new System.Drawing.Point(12, 108);
+            this.lbl_SelectChallengeStatic.Name = "lbl_SelectChallengeStatic";
+            this.lbl_SelectChallengeStatic.Size = new System.Drawing.Size(177, 25);
+            this.lbl_SelectChallengeStatic.TabIndex = 13;
+            this.lbl_SelectChallengeStatic.Text = "Select a Challenge";
             // 
             // lbl_DescribeStatic
             // 
@@ -199,12 +200,12 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1576, 1016);
             this.Controls.Add(this.lbl_DescribeStatic);
-            this.Controls.Add(this.lbl_ChallengeStatic);
+            this.Controls.Add(this.lbl_SelectChallengeStatic);
             this.Controls.Add(this.lbl_MVF);
             this.Controls.Add(this.lbl_Cost);
             this.Controls.Add(this.lbl_ChallengeTime);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_CostOfFailureStatic);
+            this.Controls.Add(this.lbl_ChallengeDurationStatic);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Start);
             this.Controls.Add(this.btn_Reset);
@@ -234,12 +235,12 @@
         private System.Windows.Forms.Button btn_Start;
         private System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.PictureBox picBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_ChallengeDurationStatic;
+        private System.Windows.Forms.Label lbl_CostOfFailureStatic;
         private System.Windows.Forms.Label lbl_ChallengeTime;
         private System.Windows.Forms.Label lbl_Cost;
         private System.Windows.Forms.Label lbl_MVF;
-        private System.Windows.Forms.Label lbl_ChallengeStatic;
+        private System.Windows.Forms.Label lbl_SelectChallengeStatic;
         private System.Windows.Forms.Label lbl_DescribeStatic;
     }
 }

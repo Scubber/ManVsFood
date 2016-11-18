@@ -28,15 +28,18 @@ namespace ManVsFood
                 
                 foreach (var item in allItems.Items)
                 {
+                    //add items from the database into the list box
                     lb_Items.Items.Add(item);
                 }
             }
         }
-        //More XML database stuff
+        //More XML database stuff, <items> root 
         [XmlRoot("items")]
         public class FoodItemCollection
         {
+            //<item> element
             [XmlElement("item")]
+            //make a list
             public List<FoodItem> Items { get; set; }
         }
         
@@ -76,7 +79,8 @@ namespace ManVsFood
 
         private void btn_Start_Click(object sender, EventArgs e)
         {
-            //Starts a timer according to the selected item in lb_AddedItems
+            //Starts a timer according to the selected item in lb_Items
+            
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -91,7 +95,7 @@ namespace ManVsFood
         //end buttons
 
 
-        //Listboxes
+        //listboxes
         private void lb_Items_SelectedIndexChanged(object sender, EventArgs e)
         {
             //for debugging
@@ -110,12 +114,11 @@ namespace ManVsFood
                     lbl_ChallengeTime.Text = challenge.duration.ToString();
                     lbl_Cost.Text = "$" + challenge.price.ToString("F2");
                     lb_Description.Items.Add(challenge.description.ToString());
-                    //figure out how to set the image
-                    //Image doge = Image.FromFile("..\\..\\Resources\\doge.jpg");
-                    //Image cate = Image.FromFile("..\\..\\Resources\\cate.jpg");
-                    picBox.Image = (Image)Properties.Resources.ResourceManager.GetObject(challenge.image);
+                    //display an image
+                    picBox.ImageLocation = challenge.image;
+                    
                 }
-               
+
             }
         }
 

@@ -14,7 +14,7 @@
   notes:
   enter price as ##.##
   enter duration in millesconds
-  enter image as a name without file extension
+  enter image as: ..\\..\\Resources\\image.png
   -->
 	<item>
 		<challengename>doge challenge</challengename>
@@ -22,7 +22,7 @@
 		<calories>1000</calories>
 		<price>42.00</price>
 		<duration>1</duration>
-		<image>doge</image>
+		<image>..\\..\\Resources\\doge.jpg</image>
 	</item>
 	<item>
 		<challengename>cate challenge</challengename>
@@ -30,7 +30,7 @@
 		<calories>2000</calories>
 		<price>24.00</price>
 		<duration>2</duration>
-		<image>cate</image>
+		<image>..\\..\\Resources\\cate.jpg</image>
 	</item>
   <item>
     <challengename>Big Texan Challenge</challengename>
@@ -38,7 +38,7 @@
     <calories>4521</calories>
     <price>80.00</price>
     <duration>1</duration>
-    <image>BixTexanChallenge</image>
+    <image>..\\..\\Resources\\bigtexanchallenge.jpg</image>
   </item>
   <item>
     <challengename>Sasquatch Burger</challengename>
@@ -46,6 +46,7 @@
     <calories>2604</calories>
     <price>164</price>
     <duration>2</duration>
-    <image>SasquatchBurger</image>
+    <image>..\\..\\Resources\\SasquatchBurger.jpg</image>
   </item>
+  
 </items>
