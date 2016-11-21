@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 
+
 namespace ManVsFood
 {
     public partial class Form_MVF : Form
@@ -24,9 +25,9 @@ namespace ManVsFood
             using (XmlReader reader = XmlReader.Create("..\\..\\Resources\\FoodItemDatabase.xml"))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(FoodItemCollection));
-                FoodItemCollection allItems = (FoodItemCollection)serializer.Deserialize(reader);
+                FoodItems = (FoodItemCollection)serializer.Deserialize(reader);
                 
-                foreach (var item in allItems.Items)
+                foreach (var item in FoodItems.Items)
                 {
                     //add items from the database into the list box
                     lb_Items.Items.Add(item);
@@ -65,7 +66,27 @@ namespace ManVsFood
         {
             // Opens a new form and adds a new challenge item to lb_Items
             Form_ChallengeInfo challengeInfo = new Form_ChallengeInfo();
-            challengeInfo.Show();
+            challengeInfo.ShowDialog();
+
+           if (challengeInfo.DialogSave == true)
+            {
+                FoodItem newitem = challengeInfo.createItem;
+                lb_Items.Items.Add(newitem);
+                FoodItems.Items.Add(newitem);
+                XmlWriterSettings settings = new XmlWriterSettings();
+                //add xml settings here
+                //settings.
+
+                using (XmlWriter writer = XmlWriter.Create("..\\..\\Resources\\FoodItemDatabase.xml", settings))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(FoodItemCollection));
+                    serializer.Serialize(writer, FoodItems);
+
+
+                }
+
+            }
+            
            
             
         }
