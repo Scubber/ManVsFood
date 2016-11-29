@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>piq_6617_400x400.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -94,6 +97,7 @@
     <None Include="Resources\doge.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="piq_6617_400x400.ico" />
     <Content Include="Resources\cate.jpg" />
     <Content Include="Resources\FoodItemDatabase.xml" />
   </ItemGroup>

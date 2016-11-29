@@ -74,17 +74,16 @@ namespace ManVsFood
                 lb_Items.Items.Add(newitem);
                 FoodItems.Items.Add(newitem);
                 XmlWriterSettings settings = new XmlWriterSettings();
-                //add xml settings here
+                //add xml settings here - fix word wrap issue
                 //settings.
+
 
                 using (XmlWriter writer = XmlWriter.Create("..\\..\\Resources\\FoodItemDatabase.xml", settings))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(FoodItemCollection));
                     serializer.Serialize(writer, FoodItems);
-
-
                 }
-
+      
             }
             
            
@@ -93,8 +92,9 @@ namespace ManVsFood
 
         private void btn_Remove_Click(object sender, EventArgs e)
         {
-            //Removes items from lb_AddedItems 
+            //Removes items from lb_Items 
             //posible confirm dialogue?
+            
         }
 
         private void btn_Reset_Click(object sender, EventArgs e)

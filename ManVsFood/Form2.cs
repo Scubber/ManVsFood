@@ -42,19 +42,12 @@ namespace ManVsFood
                 string fileName = ofd.SafeFileName;
                 path = fullPath.Replace(fileName, "");
                 txt2_Image.Text = path + fileName;
-                /* if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                 { 
-                 File.Copy(ofd.FileName, "..\\..\\Resources\\");
-                 }
-                 */
-                //File.Copy(ofd.FileName.ToString(), txt_imgPath.Text = ofd.FileName);
-
+                
             }
         }
 
         private void btn2_Save_Click(object sender, EventArgs e)
         {
-
             DialogSave = true;
             this.Close();
             
