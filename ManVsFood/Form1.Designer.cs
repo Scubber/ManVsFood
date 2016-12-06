@@ -48,6 +48,8 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.pauseButton = new System.Windows.Forms.Button();
             this.TimerLabelText = new System.Windows.Forms.Label();
+            this.txt_Calories = new System.Windows.Forms.TextBox();
+            this.lbl_CaloriesText = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +79,7 @@
             // 
             // btn_Start
             // 
-            this.btn_Start.Location = new System.Drawing.Point(580, 364);
+            this.btn_Start.Location = new System.Drawing.Point(580, 382);
             this.btn_Start.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.Size = new System.Drawing.Size(129, 39);
@@ -89,7 +91,7 @@
             // btn_Exit
             // 
             this.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_Exit.Location = new System.Drawing.Point(725, 421);
+            this.btn_Exit.Location = new System.Drawing.Point(725, 439);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(129, 39);
@@ -206,7 +208,7 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(580, 421);
+            this.clearButton.Location = new System.Drawing.Point(580, 439);
             this.clearButton.Margin = new System.Windows.Forms.Padding(4);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(128, 39);
@@ -217,7 +219,7 @@
             // 
             // pauseButton
             // 
-            this.pauseButton.Location = new System.Drawing.Point(725, 364);
+            this.pauseButton.Location = new System.Drawing.Point(725, 382);
             this.pauseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Size = new System.Drawing.Size(129, 39);
@@ -235,6 +237,25 @@
             this.TimerLabelText.TabIndex = 21;
             this.TimerLabelText.Text = "Timer";
             // 
+            // txt_Calories
+            // 
+            this.txt_Calories.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Calories.Location = new System.Drawing.Point(721, 339);
+            this.txt_Calories.Name = "txt_Calories";
+            this.txt_Calories.ReadOnly = true;
+            this.txt_Calories.Size = new System.Drawing.Size(132, 34);
+            this.txt_Calories.TabIndex = 22;
+            this.txt_Calories.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_CaloriesText
+            // 
+            this.lbl_CaloriesText.AutoSize = true;
+            this.lbl_CaloriesText.Location = new System.Drawing.Point(621, 341);
+            this.lbl_CaloriesText.Name = "lbl_CaloriesText";
+            this.lbl_CaloriesText.Size = new System.Drawing.Size(103, 29);
+            this.lbl_CaloriesText.TabIndex = 23;
+            this.lbl_CaloriesText.Text = "Calories";
+            // 
             // Form_MVF
             // 
             this.AcceptButton = this.btn_Start;
@@ -243,6 +264,8 @@
             this.AutoSize = true;
             this.CancelButton = this.btn_Exit;
             this.ClientSize = new System.Drawing.Size(884, 488);
+            this.Controls.Add(this.lbl_CaloriesText);
+            this.Controls.Add(this.txt_Calories);
             this.Controls.Add(this.TimerLabelText);
             this.Controls.Add(this.pauseButton);
             this.Controls.Add(this.clearButton);
@@ -295,6 +318,8 @@
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button pauseButton;
         private System.Windows.Forms.Label TimerLabelText;
+        private System.Windows.Forms.TextBox txt_Calories;
+        private System.Windows.Forms.Label lbl_CaloriesText;
     }
 }
 

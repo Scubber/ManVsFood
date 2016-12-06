@@ -125,6 +125,8 @@ namespace ManVsFood
                     timerDisplay.Text = (challenge.duration *60).ToString() + " minutes" ;
                     // Description display
                     descriptionLabel.Text = challenge.description.ToString();
+                    //Calories display
+                    txt_Calories.Text = challenge.calories.ToString();
                  }
 
             }
