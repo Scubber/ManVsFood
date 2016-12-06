@@ -54,12 +54,8 @@ namespace ManVsFood
             public double price { get; set; }
             public double duration { get; set; }
             public string image { get; set; }
-
-           
-            
-            
         }
-        //end XML database stuff
+        
 
         //buttons
         private void btn_Add_Click(object sender, EventArgs e)
@@ -85,42 +81,21 @@ namespace ManVsFood
                 }
       
             }
-            
-           
-            
         }
-
-        private void btn_Remove_Click(object sender, EventArgs e)
-        {
-            //Removes items from lb_Items 
-            //posible confirm dialogue?
-            
-        }
-
-        private void btn_Reset_Click(object sender, EventArgs e)
-        {
-            //do we even need a reset?
-        }
-
-        private void btn_Start_Click(object sender, EventArgs e)
-        {
-            //Starts a timer according to the selected item in lb_Items
-            
-        }
+       
 
         private void btn_Exit_Click(object sender, EventArgs e)
         {
-            //exits the app
-            this.Close();
-            //maybe add a confirmation dialogue
-
-            //MessageBox.Show("Are you sure you want ot Exit?", "Exit", MessageBoxButtons.YesNo);
+            DialogResult response;
+            response = MessageBox.Show("Are you sure you want to exit?", "Confirming",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (response == DialogResult.Yes)
+            {
+                this.Close();
+            }
 
         }
-        //end buttons
-
-
-        //listboxes
+        double challengeTimer;
         private void lb_Items_SelectedIndexChanged(object sender, EventArgs e)
         {
             //for debugging
@@ -131,18 +106,26 @@ namespace ManVsFood
             {
                 if (lbox.SelectedItem != null)
                 {
-                    //clear the description
-                    lb_Description.Items.Clear();
+                                                     
                     //Get the loaded XML data into a variable "challenge"
                     var challenge = lbox.SelectedItem as FoodItem;
-                    //display the information of selected items in appropriate labels/listbox
-                    lbl_ChallengeTime.Text = challenge.duration.ToString();
+                    //display the information of selected items in appropriate labels
+
+                    //Challenge Duration display
+                    lbl_ChallengeTime.Text = (challenge.duration * 60 ).ToString()+ " minute(s)";
+                    //Gets the time for the challenge
+                    challengeTimer = challenge.duration;
+                    //Displays the cost of the challenge
                     lbl_Cost.Text = "$" + challenge.price.ToString("F2");
-                    lb_Description.Items.Add(challenge.description.ToString());
                     //display an image
                     picBox.ImageLocation = challenge.image;
-                    
-                }
+                    //Needed for when a new item gets selected the timer stops.
+                    timer1.Stop();
+                    // Initial timer display
+                    timerDisplay.Text = (challenge.duration *60).ToString() + " minutes" ;
+                    // Description display
+                    descriptionLabel.Text = challenge.description.ToString();
+                 }
 
             }
         }
@@ -152,9 +135,91 @@ namespace ManVsFood
         {
 
         }
-        //end list boxes
 
+        private void Form_MVF_Load(object sender, EventArgs e)
+        {
 
+        }
+        //Startcheck makes sure the timer is not running when another item is selected. Before the timer would auto start.
+        bool startCheck = false;
+        double displayTimer;
+        //paused boolean controls the timer for pauses
+        bool paused = false;
+        double minutes = 0;
+        double seconds = 0;
 
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+            if (paused == false)
+            { 
+                timerDisplay.Text = "";
+                //Conver minutes to seconds
+                displayTimer = challengeTimer;
+                // Times 60 to convert to minutes from hours
+                minutes = displayTimer * 60;
+                startCheck = true;
+                // Start the correct time
+                minutes--;
+                seconds = 59;
+                timerDisplay.Text = timerDisplay.Text = minutes + " minutes & \n" + seconds + " seconds";
+            }
+
+            timer1.Start();
+         }
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // pause and startcheck are variables to control the timer properly
+            paused = false;
+            if (startCheck == true)
+            { 
+                
+                if (minutes >=0 && seconds > 0)
+                {             
+                    seconds--;
+                    //Stop the timer when the timit limit is up
+                    if(minutes == 0 && seconds == 0)
+                    {
+                        timerDisplay.Text = minutes + " minutes & \n" + seconds + " seconds";
+                        MessageBox.Show("TIME IS UP");
+                        startCheck = false;
+                        timer1.Stop();
+                    }
+                    //decrement the minutes when seconds hit 0
+                    else if (seconds <= 0)
+                    {
+                        minutes--;
+                        seconds = seconds +60;
+                        timerDisplay.Text = minutes + " minutes & \n" + seconds + " seconds";
+                    }
+                    //update timer display when the other if statements have not been triggered. 
+                    else
+                    {
+                        timerDisplay.Text = minutes + " minutes & \n" + seconds + " seconds";
+                    }
+                }               
+            }
+            else
+            {
+                startCheck = false;
+            }
+            
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            timerDisplay.Text = "";
+            lbl_ChallengeTime.Text = "";
+            lbl_Cost.Text = "";
+            descriptionLabel.Text = "";
+            timer1.Stop();
+            paused = false;
+        }
+
+        private void pauseButton_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            paused = true;
+        }
     }
 }
