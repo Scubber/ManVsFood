@@ -70,7 +70,7 @@ namespace ManVsFood
                 lb_Items.Items.Add(newitem);
                 FoodItems.Items.Add(newitem);
                 XmlWriterSettings settings = new XmlWriterSettings();
-                //add xml settings here - fix word wrap issue
+                //note: add xml settings here - fix word wrap issue
                 //settings.
 
 

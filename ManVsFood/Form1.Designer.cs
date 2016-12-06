@@ -56,11 +56,11 @@
             this.lb_Items.DisplayMember = "challengename";
             this.lb_Items.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Items.FormattingEnabled = true;
-            this.lb_Items.ItemHeight = 16;
+            this.lb_Items.ItemHeight = 29;
             this.lb_Items.Location = new System.Drawing.Point(14, 74);
             this.lb_Items.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lb_Items.Name = "lb_Items";
-            this.lb_Items.Size = new System.Drawing.Size(207, 324);
+            this.lb_Items.Size = new System.Drawing.Size(207, 323);
             this.lb_Items.TabIndex = 0;
             this.lb_Items.SelectedIndexChanged += new System.EventHandler(this.lb_Items_SelectedIndexChanged);
             // 
@@ -88,6 +88,7 @@
             // 
             // btn_Exit
             // 
+            this.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_Exit.Location = new System.Drawing.Point(725, 421);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Exit.Name = "btn_Exit";
@@ -115,7 +116,7 @@
             this.lbl_ChallengeDurationStatic.AutoSize = true;
             this.lbl_ChallengeDurationStatic.Location = new System.Drawing.Point(581, 273);
             this.lbl_ChallengeDurationStatic.Name = "lbl_ChallengeDurationStatic";
-            this.lbl_ChallengeDurationStatic.Size = new System.Drawing.Size(133, 17);
+            this.lbl_ChallengeDurationStatic.Size = new System.Drawing.Size(225, 29);
             this.lbl_ChallengeDurationStatic.TabIndex = 8;
             this.lbl_ChallengeDurationStatic.Text = "Challenge Duration:";
             // 
@@ -124,7 +125,7 @@
             this.lbl_CostOfFailureStatic.AutoSize = true;
             this.lbl_CostOfFailureStatic.Location = new System.Drawing.Point(612, 307);
             this.lbl_CostOfFailureStatic.Name = "lbl_CostOfFailureStatic";
-            this.lbl_CostOfFailureStatic.Size = new System.Drawing.Size(103, 17);
+            this.lbl_CostOfFailureStatic.Size = new System.Drawing.Size(175, 29);
             this.lbl_CostOfFailureStatic.TabIndex = 9;
             this.lbl_CostOfFailureStatic.Text = "Cost of Failure:";
             // 
@@ -152,7 +153,7 @@
             this.lbl_MVF.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.85714F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_MVF.Location = new System.Drawing.Point(308, 9);
             this.lbl_MVF.Name = "lbl_MVF";
-            this.lbl_MVF.Size = new System.Drawing.Size(244, 44);
+            this.lbl_MVF.Size = new System.Drawing.Size(416, 74);
             this.lbl_MVF.TabIndex = 12;
             this.lbl_MVF.Text = "Man Vs Food";
             // 
@@ -162,7 +163,7 @@
             this.lbl_SelectChallengeStatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_SelectChallengeStatic.Location = new System.Drawing.Point(11, 45);
             this.lbl_SelectChallengeStatic.Name = "lbl_SelectChallengeStatic";
-            this.lbl_SelectChallengeStatic.Size = new System.Drawing.Size(212, 17);
+            this.lbl_SelectChallengeStatic.Size = new System.Drawing.Size(361, 29);
             this.lbl_SelectChallengeStatic.TabIndex = 13;
             this.lbl_SelectChallengeStatic.Text = "Select a Challenge From the List";
             // 
@@ -172,7 +173,7 @@
             this.lbl_DescribeStatic.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_DescribeStatic.Location = new System.Drawing.Point(365, 292);
             this.lbl_DescribeStatic.Name = "lbl_DescribeStatic";
-            this.lbl_DescribeStatic.Size = new System.Drawing.Size(79, 17);
+            this.lbl_DescribeStatic.Size = new System.Drawing.Size(135, 29);
             this.lbl_DescribeStatic.TabIndex = 14;
             this.lbl_DescribeStatic.Text = "Description";
             // 
@@ -237,7 +238,7 @@
             // Form_MVF
             // 
             this.AcceptButton = this.btn_Start;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.CancelButton = this.btn_Exit;
